@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = []
+
+    let arr2 = []
+
+    add();
+
+    function add() {
+        for (let i = 0; i < 10; i++) {
+            while (true) {
+                input = prompt('Nhập số nguyên thứ ' + (i + 1));
+                if (input > 0) {
+                    break;
+                } else if (input === '') {
+                    alert('Không được để trống!');
+                } else if (input <= 0) {
+                    break;
+                } else {
+                    alert('Nhập số nguyên!');
+                }
+            }
+            arr.push(parseInt(input));
+        }
+    }
+
+    for (let i = arr.length; i > 0; i--) {
+        arr2.push(arr.pop());
+    }
+
+    for (let i = 0; i < arr2.length; i++) {
+        document.write(arr2[i], '<br>')
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let arr = []
+
+    add();
+    bubbleSort();
+    print();
+
+    function add() {
+        for (let i = 0; i < 10; i++) {
+            while (true) {
+                input = prompt('Nhập số nguyên thứ ' + (i + 1));
+                if (input > 0) {
+                    break;
+                } else if (input === '') {
+                    alert('Không được để trống!');
+                } else if (input <= 0) {
+                    break;
+                } else {
+                    alert('Nhập số nguyên!');
+                }
+            }
+            arr.push(parseInt(input));
+        }
+    }
+
+
+    function print() {
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i], '<br>');
+        }
+    }
+
+
+    function bubbleSort() {
+        for (let i = arr.length - 1; i >= 0; i--) {
+            for (let j = 0; j < i; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

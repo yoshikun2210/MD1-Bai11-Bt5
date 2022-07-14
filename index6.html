@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let arr = []
+
+    add();
+
+    function add() {
+        for (let i = 0; i < 10; i++) {
+            while (true) {
+                input = prompt('Nhập số nguyên thứ ' + (i + 1));
+                if (input > 0) {
+                    break;
+                } else if (input === '') {
+                    alert('Không được để trống!');
+                } else if (input <= 0) {
+                    break;
+                } else {
+                    alert('Nhập số nguyên!');
+                }
+            }
+            arr.push(parseInt(input));
+        }
+    }
+
+    let V = +prompt('Nhập số nguyên V:');
+
+    let check = false;
+
+    let vIndex = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (V == arr[i]) {
+            check = true;
+            vIndex = i;
+        }
+    }
+
+    if (check) {
+        for (let i = vIndex; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = 0;
+    } else {
+        document.write(`V = ${V} is not in the array!`);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i], '<br>')
+    }
+
+</script>
+</body>
+</html>

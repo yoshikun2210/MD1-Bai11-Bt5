@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [];
+    let arr2 = [];
+    let arr3 = new Array(20);
+
+    add(arr1);
+    add(arr2);
+
+    connect();
+
+    console.log(arr3);
+
+    print(arr3)
+
+    function print(arr) {
+        for (let i = 0; i < 20; i++) {
+            document.write(arr[i], '<br>');
+        }
+    }
+
+    function connect() {
+        for (let i = 0; i < 10; i++) {
+            arr3[i] = arr2[i];
+        }
+        for (let i = 0; i < 10; i++) {
+            arr3[i + 10] = arr1[i];
+        }
+    }
+
+    function add(arr) {
+        for (let i = 0; i < 10; i++) {
+            while (true) {
+                input = prompt('Nhập số nguyên thứ ' + (i + 1));
+                if (input > 0) {
+                    break;
+                } else if (input === '') {
+                    alert('Không được để trống!');
+                } else if (input <= 0) {
+                    break;
+                } else {
+                    alert('Nhập số nguyên!');
+                }
+            }
+            arr.push(parseInt(input));
+        }
+    }
+
+</script>
+</body>
+</html>

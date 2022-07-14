@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    let arr = [];
+    add();
+
+    function add() {
+        for (let i = 0; i < 10; i++) {
+            while (true) {
+                input = prompt('Nhập số nguyên thứ ' + (i + 1));
+                if (input > 0) {
+                    break;
+                } else if (input === '') {
+                    alert('Không được để trống!');
+                } else if (input <= 0) {
+                    break;
+                } else {
+                    alert('Nhập số nguyên!');
+                }
+            }
+            arr.push(parseInt(input));
+        }
+    }
+
+
+    let max = arr[0];
+    let maxIndex = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            maxIndex = i;
+        }
+    }
+
+    document.write('Số lớn nhất trong mảng là:' + max + ' ở index ' + maxIndex)
+
+</script>
+</body>
+</html>

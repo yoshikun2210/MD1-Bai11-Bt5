@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<script>
+
+    let arr = [];
+    let count = 0;
+    add();
+
+    function add() {
+        for (let i = 0; i < 10; i++) {
+            while (true) {
+                input = prompt('Nhập số nguyên thứ ' + (i + 1));
+                if (input >= 10) {
+                    count++;
+                    break;
+                } else if (input === '') {
+                    alert('Không được để trống!');
+                } else if (input < 10) {
+                    break;
+                } else {
+                    alert('Nhập số nguyên!');
+                }
+            }
+            arr.push(parseInt(input));
+        }
+    }
+
+
+    document.write(`Có ${count} số nguyên lớn hơn  hoặc bằng 10: <br>`)
+
+    for (let i = 0; i < 10; i++) {
+        if (arr[i] >= 10) {
+            document.write(arr[i], '<br>');
+        }
+    }
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
